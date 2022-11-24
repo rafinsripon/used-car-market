@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PrimaryButton from '../../components/Button/PrimaryButton';
 
-const Category = ({category}) => {
-    const {_id ,name, location, resale_price, original_price, years_used, img, discription} = category;
+const Category = ({ct}) => {
+    const {_id ,name, location, resale_price, original_price, years_used, img, discription} = ct;
     return (
         <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-lg border-2 border-gray-100">
         <Link href="/" aria-label="Article">
@@ -34,7 +34,7 @@ const Category = ({category}) => {
             <p className='font-bold text-secondary'>original price: {original_price}</p>
             <p className='font-bold text-secondary'>resale price: {resale_price}</p>
           </div>
-          <Link to={`/category/${_id}`}>
+          <Link to={''}>
           <PrimaryButton
                 type="submit"
                 classes="w-full px-8 py-3 font-semibold rounded-md hover:bg-gray-700 hover:text-gray-100 mt-4"
