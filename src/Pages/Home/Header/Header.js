@@ -1,8 +1,25 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const {user, logout} = useContext(AuthContext)
+    const navigate = useNavigate();
+
+    //Logout from firebase
+  const handleSignOut = () => {
+    logout()
+      .then(() => {
+        navigate('/login');
+        toast.success('Success log out')
+        console.log('Success log out');
+      })
+      .catch(error => {
+          console.log(error);
+      }) 
+  }
   return (
     <div className="bg-[#22223b]">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -52,8 +69,12 @@ const Header = () => {
             </ul>
           </div>
           <ul className="flex items-center hidden space-x-8 lg:flex">
-            <li>
-              <Link
+            <div className="flex">
+              {
+                user?.uid ? <>
+                <button onClick={handleSignOut} className='font-bold text-slate-100'>Log Out</button>
+                </> : <>
+                <Link
                 to="/login"
                 aria-label="Sign in"
                 title="Sign in"
@@ -61,7 +82,9 @@ const Header = () => {
               >
                 Sign in
               </Link>
-            </li>
+                </>
+              }
+            </div>
           </ul>
           <div className="lg:hidden">
             <button
