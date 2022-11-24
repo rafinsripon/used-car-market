@@ -1,56 +1,92 @@
 [
     {
-        "name": "Tesla Electric Car",
+        "name": "Tesla Electric",
         "location": "Dhaka, Mirpur, 52A",
         "resale_price": 400,
         "original_price": 600,
         "years_used": "1 Years",
+        "category_id": "01",
         "img": "https://i.ibb.co/bbyFypd/dmitry-novikov-m-N4-X06d-Xpcg-unsplash.jpg",
         "discription": "Tesla electric motor company is ready to launch its biggest range electric car “Model S” in India in the coming few months. As the company got a green signal by Indian transport Minister Mr. Nitin Gadkari. Tesla has a total of 4 models in its pipeline to launch the first models is Model 3 by which company going to introduce itself in the Indian Market. Tesla is a very valuable electric company and very well established in America as well as Internationally. The CEO of Company Mr. Elon Musk clear their vision for India and their electric car launches. The Models S electric car will be the biggest range car when launch in India, as the company confirmed that the Top variant of a car capable to give over 600 kilometres range. The company CEO pointed out that all the Model S cars made since late-January have a range of 402 miles (647 km). For the record, the latest EPA-rated range delineated a 20% increase in the full range against the MY19 Tesla Model S 100D featuring the same battery pack."
     },
     {
-        "name": "Toyota super-x Car",
+        "name": "Tesla Model X",
+        "location": "Dhaka, Mirpur, 52A",
+        "resale_price": 500,
+        "original_price": 600,
+        "years_used": "2 Years",
+        "category_id": "01",
+        "img": "https://i.ibb.co/YN7DC9K/OB-YP751-0821te-G-20130821125704.jpg",
+        "discription": "Tesla electric motor company is ready to launch its biggest range electric car “Model S” in India in the coming few months. As the company got a green signal by Indian transport Minister Mr. Nitin Gadkari. Tesla has a total of 4 models in its pipeline to launch the first models is Model 3 by which company going to introduce itself in the Indian Market. Tesla is a very valuable electric company and very well established in America as well as Internationally. The CEO of Company Mr. Elon Musk clear their vision for India and their electric car launches. The Models S electric car will be the biggest range car when launch in India, as the company confirmed that the Top variant of a car capable to give over 600 kilometres range. The company CEO pointed out that all the Model S cars made since late-January have a range of 402 miles (647 km). For the record, the latest EPA-rated range delineated a 20% increase in the full range against the MY19 Tesla Model S 100D featuring the same battery pack."
+    },
+    {
+        "name": "Tesla Solar-x",
+        "location": "Dhaka, Mirpur, 52A",
+        "resale_price": 600,
+        "original_price": 700,
+        "years_used": "1 Years",
+        "category_id": "01",
+        "img": "https://i.ibb.co/NZSB163/telsa-s-640x354.jpg",
+        "discription": "Tesla electric motor company is ready to launch its biggest range electric car “Model S” in India in the coming few months. As the company got a green signal by Indian transport Minister Mr. Nitin Gadkari. Tesla has a total of 4 models in its pipeline to launch the first models is Model 3 by which company going to introduce itself in the Indian Market. Tesla is a very valuable electric company and very well established in America as well as Internationally. The CEO of Company Mr. Elon Musk clear their vision for India and their electric car launches. The Models S electric car will be the biggest range car when launch in India, as the company confirmed that the Top variant of a car capable to give over 600 kilometres range. The company CEO pointed out that all the Model S cars made since late-January have a range of 402 miles (647 km). For the record, the latest EPA-rated range delineated a 20% increase in the full range against the MY19 Tesla Model S 100D featuring the same battery pack."
+    },
+    {
+        "name": "Toyota Toyota Camry",
         "location": "Dhaka, Mirpur, 52A",
         "resale_price": 500,
         "original_price": 700,
-        "years_used": "6 Month",
+        "years_used": "2 Years",
+        "category_id": "02", 
         "img": "https://i.ibb.co/rHzKT7W/martin-katler-x5z-Al7-WI6u4-unsplash.jpg",
         "discription": "This Toyota Fortuner Legender model isn't a world apart from the standard version, and yet gets a more premium looking face and more features on the inside. Sure, the price of this new top-spec trim has shot up and isn't available with a 4x4 set-up. However, it suffices he/she who wouldn't take it off-road, and prefer a hassle-free after-sales experience. And while other rivals are downsizing on the engine capacity, it's a good step taken forward by Toyota by introducing a more powerful engine. Gives more reasons for prospective buyers to consider it, apart from its little unique look to the Fortuner, which already commands a good demand in our country. Gives more reasons for prospective buyers to consider it, apart from its little unique look to the Fortuner, which already commands a good demand in our country"
     },
     {
-        "name": "Audi Q8 face Car",
+        "name": "Toyota Solar-x Car",
         "location": "Dhaka, Mirpur, 52A",
-        "resale_price": 450,
-        "original_price": 600,
-        "years_used": "2 Years",
+        "resale_price": 300,
+        "original_price": 500,
+        "years_used": "12 Month",
+        "category_id": "02",
+        "img": "https://i.ibb.co/K9JMcH5/524392-les-toyota-camry-et-venza-gagnent-en-style-pour-2023.jpg",
+        "discription": "This Toyota Fortuner Legender model isn't a world apart from the standard version, and yet gets a more premium looking face and more features on the inside. Sure, the price of this new top-spec trim has shot up and isn't available with a 4x4 set-up. However, it suffices he/she who wouldn't take it off-road, and prefer a hassle-free after-sales experience. And while other rivals are downsizing on the engine capacity, it's a good step taken forward by Toyota by introducing a more powerful engine. Gives more reasons for prospective buyers to consider it, apart from its little unique look to the Fortuner, which already commands a good demand in our country. Gives more reasons for prospective buyers to consider it, apart from its little unique look to the Fortuner, which already commands a good demand in our country"
+    },
+    {
+        "name": "Toyota Corolla car",
+        "location": "Dhaka, Mirpur, 52A",
+        "resale_price": 700,
+        "original_price": 900,
+        "years_used": "6 Month",
+        "category_id": "02",
+        "img": "https://i.ibb.co/g42Nk2D/toyota-corolla-altis-car-model-review.jpg",
+        "discription": "This Toyota Fortuner Legender model isn't a world apart from the standard version, and yet gets a more premium looking face and more features on the inside. Sure, the price of this new top-spec trim has shot up and isn't available with a 4x4 set-up. However, it suffices he/she who wouldn't take it off-road, and prefer a hassle-free after-sales experience. And while other rivals are downsizing on the engine capacity, it's a good step taken forward by Toyota by introducing a more powerful engine. Gives more reasons for prospective buyers to consider it, apart from its little unique look to the Fortuner, which already commands a good demand in our country. Gives more reasons for prospective buyers to consider it, apart from its little unique look to the Fortuner, which already commands a good demand in our country"
+    },
+    {
+        "name": "Audi Q8 face",
+        "location": "Dhaka, Mirpur, 52A",
+        "resale_price": 800,
+        "original_price": 900,
+        "years_used": "7 Month",
+        "category_id": "03",
         "img": "https://i.ibb.co/fd4cTB7/102213277.jpg",
         "discription": "The Audi Q8 combines the elegance of a four-door luxury coupé with the practical versatility of a large SUV. Richly equipped, comprehensively connected and tough enough for off-road duty, it is a confident companion for business and leisure. Expressive design with new Singleframe and features from the original Audi quattro. Generous, elegant interior, touch operating concept and high-tech navigation: The Audi Q8 is a confident companion for business and leisure.The Audi Q8 combines the elegance of a four-door luxury coupé with the practical versatility of a large SUV. Richly equipped, comprehensively connected and tough enough for off-road duty, it is a confident companion for business and leisure. Expressive design with new Singleframe and features from the original Audi quattro. Generous, elegant interior, touch operating concept and high-tech navigation: The Audi Q8 is a confident companion for business and leisure."
     },
     {
-        "name": "BMW Race Car",
-        "location": "Dhaka, Mirpur, 52A",
-        "resale_price": 400,
-        "original_price": 600,
-        "years_used": "1.5 Years",
-        "img": "https://i.ibb.co/B4SLQbT/download.jpg",
-        "discription": "Sustainable production based on innovative thinking: the GREEN focus of the BMW iFACTORY includes using state-of-the-art technologies resource-optimised and circular.Sustainable production based on innovative thinking: the GREEN focus of the BMW iFACTORY includes using state-of-the-art technologies resource-optimised and circular.Sustainable production based on innovative thinking: the GREEN focus of the BMW iFACTORY includes using state-of-the-art technologies resource-optimised and circular.Sustainable production based on innovative thinking: the GREEN focus of the BMW iFACTORY includes using state-of-the-art technologies resource-optimised and circular."
-    },
-    {
-        "name": "Farari solar Car",
+        "name": "Audi A4 Car",
         "location": "Dhaka, Mirpur, 52A",
         "resale_price": 600,
         "original_price": 700,
-        "years_used": "5 Month",
-        "img": "https://i.ibb.co/Jd4QxqY/images.jpg",
-        "discription": "Tradition always stems from innovation. The ongoing quest for lasting firsts is what fuels the Ferrari legend. Our ability to combine revolutionary technological solutions with exceptional artisanal craftsmanship is what enables us to create icons that stay timeless in a fast changing world.Tradition always stems from innovation. The ongoing quest for lasting firsts is what fuels the Ferrari legend. Our ability to combine revolutionary technological solutions with exceptional artisanal craftsmanship is what enables us to create icons that stay timeless in a fast changing world.Tradition always stems from innovation. The ongoing quest for lasting firsts is what fuels the Ferrari legend. Our ability to combine revolutionary technological solutions with exceptional artisanal craftsmanship is what enables us to create icons that stay timeless in a fast changing world."
+        "years_used": "2 Years",
+        "category_id": "03",
+        "img": "https://i.ibb.co/P5yTpsN/a4-exterior-right-front-three-quarter-2.jpg",
+        "discription": "The Audi Q8 combines the elegance of a four-door luxury coupé with the practical versatility of a large SUV. Richly equipped, comprehensively connected and tough enough for off-road duty, it is a confident companion for business and leisure. Expressive design with new Singleframe and features from the original Audi quattro. Generous, elegant interior, touch operating concept and high-tech navigation: The Audi Q8 is a confident companion for business and leisure.The Audi Q8 combines the elegance of a four-door luxury coupé with the practical versatility of a large SUV. Richly equipped, comprehensively connected and tough enough for off-road duty, it is a confident companion for business and leisure. Expressive design with new Singleframe and features from the original Audi quattro. Generous, elegant interior, touch operating concept and high-tech navigation: The Audi Q8 is a confident companion for business and leisure."
     },
     {
-        "name": "Acura Holly Car",
+        "name": "Audi Q7 Car",
         "location": "Dhaka, Mirpur, 52A",
-        "resale_price": 300,
-        "original_price": 600,
-        "years_used": "3 Month",
-        "img": "https://i.ibb.co/M505szN/images-1.jpg",
-        "discription": "Honda’s premium brand makes cars and SUVs, but, alas, no more sports cars. The  legendary NSX comes to the end of the road. Acura will also be joining the push for electrification with the upcoming ZDX Type S. Despite its upscale mission, many Acuras struggle to compete with those from rival brands. Recently tested models suffer from frustrating controls. Powertrains tend to be zesty, and overall reliability remains mostly strong.Honda’s premium brand makes cars and SUVs, but, alas, no more sports cars. The  legendary NSX comes to the end of the road. Acura will also be joining the push for electrification with the upcoming ZDX Type S. Despite its upscale mission, many Acuras struggle to compete with those from rival brands. Recently tested models suffer from frustrating controls. Powertrains tend to be zesty, and overall reliability remains mostly strong."
+        "resale_price": 660,
+        "original_price": 770,
+        "years_used": "1 Years",
+        "category_id": "03",
+        "img": "https://i.ibb.co/Mcys3jn/german-heart.jpg",
+        "discription": "The Audi Q8 combines the elegance of a four-door luxury coupé with the practical versatility of a large SUV. Richly equipped, comprehensively connected and tough enough for off-road duty, it is a confident companion for business and leisure. Expressive design with new Singleframe and features from the original Audi quattro. Generous, elegant interior, touch operating concept and high-tech navigation: The Audi Q8 is a confident companion for business and leisure.The Audi Q8 combines the elegance of a four-door luxury coupé with the practical versatility of a large SUV. Richly equipped, comprehensively connected and tough enough for off-road duty, it is a confident companion for business and leisure. Expressive design with new Singleframe and features from the original Audi quattro. Generous, elegant interior, touch operating concept and high-tech navigation: The Audi Q8 is a confident companion for business and leisure."
     }
 ]

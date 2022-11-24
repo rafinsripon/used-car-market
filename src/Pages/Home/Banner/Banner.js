@@ -4,12 +4,12 @@ import banner from '../../../Assets/Image/bner1.jpg'
 
 const Banner = () => {
     return (
-        <div className="relative px-4 pt-16 mx-auto lg:py-32 md:px-8 xl:px-20 sm:max-w-xl md:max-w-full">
-      <div className="max-w-xl mx-auto lg:max-w-screen-xl">
-        <div className="mb-16 lg:max-w-lg lg:mb-0">
+      <div className="relative flex flex-col py-16 lg:pt-0 lg:flex-col lg:pb-0">
+      <div className="flex flex-col items-start w-full max-w-xl px-4 mx-auto lg:px-8 lg:max-w-screen-xl">
+        <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
           <div className="max-w-xl mb-6">
             <div>
-              <p className="inline-block px-3 py-px mb-4 text-base font-bold tracking-wider text-secondary uppercase rounded-full bg-primary">
+            <p className="inline-block px-3 py-px mb-4 text-base font-bold tracking-wider text-secondary uppercase rounded-full bg-primary">
                Used Car Market
               </p>
             </div>
@@ -38,10 +38,10 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center h-full overflow-hidden lg:w-2/3 xl:w-1/2 lg:absolute lg:justify-start lg:bottom-0 lg:right-0 lg:items-end">
+      <div className="inset-y-0 right-0 w-full max-w-xl px-4 mx-auto lg:pl-8 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
         <img
+          className="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none sm:h-96 lg:h-full"
           src={banner}
-          className="object-cover object-top w-full h-64 max-w-xl -mb-16 rounded shadow-2xl lg:ml-64 xl:ml-8 lg:-mb-24 xl:-mb-28 lg:h-[560px] lg:max-w-screen-md"
           alt=""
         />
       </div>

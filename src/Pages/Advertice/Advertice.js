@@ -1,9 +1,10 @@
 import React from 'react';
+import Spinner from '../../components/BigSpinner/Spinner';
 
 const Advertice = () => {
     return (
         <div>
-            <h2>hello advertice</h2>
+            <Spinner />
         </div>
     );
 };
