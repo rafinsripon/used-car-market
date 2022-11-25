@@ -55,6 +55,7 @@ const Alluser = () => {
         }
       });
     };
+
     return (
         <div>
       <div className="overflow-x-auto">

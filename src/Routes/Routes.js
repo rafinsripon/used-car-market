@@ -15,6 +15,7 @@ import AddProduct from "../Pages/Dashbord/AddProduct/AddProduct";
 import Alluser from "../Pages/Dashbord/Alluser/Alluser";
 import AddminRoute from "./AdminRoute";
 import Payment from "../Pages/Dashbord/Payment/Payment";
+import SellerRoute from "./SellerRoute";
 
 export const router = createBrowserRouter([
     {
@@ -76,9 +77,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/addproduct',
-                element: <PrivateRoute>
-                    <AddProduct />
-                </PrivateRoute>
+                element: <SellerRoute>
+                <AddProduct />
+            </SellerRoute>
             },
             {
                 path: '/dashboard/payment/:id',

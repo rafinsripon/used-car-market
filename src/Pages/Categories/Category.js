@@ -4,7 +4,7 @@ import BookingModal from '../../components/BookingModal/BookingModal';
 import PrimaryButton from '../../components/Button/PrimaryButton';
 
 const Category = ({ct, setBooked}) => {
-    const {_id ,name, location, resale_price, original_price, years_used, img, discription} = ct;
+    const {_id, time, name, location, resale_price, original_price, years_used, img, discription} = ct;
     return (
         <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-lg border-2 border-gray-100">
         <Link href="/" aria-label="Article">
@@ -35,6 +35,7 @@ const Category = ({ct, setBooked}) => {
             <p className='font-bold text-secondary'>original price: ${original_price}</p>
             <p className='font-bold text-secondary'>resale price: ${resale_price}</p>
           </div>
+          <p className='font-bold mt-2 text-rose-600'>{time}</p>
           <label 
           onClick={() => setBooked(ct)}
           htmlFor="booking-modal" className="btn w-full rounded-none mt-3">Book Now</label>

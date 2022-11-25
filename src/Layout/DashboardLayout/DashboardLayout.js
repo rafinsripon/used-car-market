@@ -2,11 +2,13 @@ import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import useAdmin from '../../hooks/useAdmin';
+import useSeller from '../../hooks/useSeller';
 import Header from '../../Pages/Home/Header/Header';
 
 const DashboardLayout = () => {
     const {user} = useContext(AuthContext);
     const [isAdmin] = useAdmin(user?.email);
+    const [isSeller] = useSeller(user?.email)
     return (
         <div>
             <Header />
@@ -22,10 +24,13 @@ const DashboardLayout = () => {
               <Link to="/dashboard" className="text-xl font-bold text-white">My orders</Link>
             </li>
             {
+              isSeller && <li><Link to="/dashboard/addproduct" className="text-xl text-white font-bold">Add A Product</Link></li>
+            }
+            {
               isAdmin && <>
+              <li><Link to="/dashboard/addproduct" className="text-xl text-white font-bold">Add A Product</Link></li>
               <li>
               <Link to="/dashboard/Alluser" className="text-xl text-white font-bold">All Users</Link></li>
-                <li><Link to="/dashboard/addproduct" className="text-xl text-white font-bold">Add A Product</Link></li>
               </>
             }
           </ul>

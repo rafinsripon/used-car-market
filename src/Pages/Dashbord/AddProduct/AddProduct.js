@@ -2,11 +2,8 @@ import { async } from "@firebase/util";
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
-import SmallSpinner from "../../../components/BigSpinner/SmallSpinner";
 
 const AddProduct = () => {
-  const navigate = useNavigate()
   const { data: categories = [], isLoading } = useQuery({
     queryKey: ["categories"],
     queryFn: async () => {
@@ -45,18 +42,20 @@ const AddProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         const image = data.data.display_url;
+        // const date = ;
         const addproduct = {
           category_id: category,
           name: name,
           original_price: originalprice,
           resale_price: resaleprice,
           location: location,
+          img: image,
           phone,
           years_used: purchase,
           condition,
           category,
+          time: new Date().toLocaleDateString(),
           discription: message,
-          img: image,
         };
         console.log(addproduct);
         fetch("http://localhost:5000/category", {
@@ -107,7 +106,6 @@ const AddProduct = () => {
               type="file"
               id="image"
               name="image"
-              accept="image/*"
               class="block w-full px-4 py-2 mt-2 text-gray-900 bg-white border border-gray-200 rounded-md dark:bg-gray-100 dark:text-gray-900 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
             />
           </div>
