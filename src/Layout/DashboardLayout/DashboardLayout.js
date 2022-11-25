@@ -17,7 +17,7 @@ const DashboardLayout = () => {
         </div>
         <div className="drawer-side bg-secondary">
           <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 text-base-content">
+          <ul className="menu p-4 w-80 text-base-content lg:bg-inherit bg-[#231f39]">
           <li>
               <Link to="/dashboard" className="text-xl font-bold text-white">My orders</Link>
             </li>

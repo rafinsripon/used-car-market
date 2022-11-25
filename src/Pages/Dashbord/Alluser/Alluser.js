@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import toast from 'react-hot-toast';
+import Swal from 'sweetalert2'
 
 const Alluser = () => {
 
@@ -29,32 +30,31 @@ const Alluser = () => {
     }
 
 
-    // const handleDelete = (id) => {
-    //   Swal.fire({
-    //     title: "Are you sure?",
-    //     text: "You Want to Delete?",
-    //     icon: "warning",
-    //     showCancelButton: true,
-    //     confirmButtonColor: "#3085d6",
-    //     cancelButtonColor: "#d33",
-    //     confirmButtonText: "Yes, delete it!",
-    //   }).then((result) => {
-    //     if (result.isConfirmed) {
-    //       Swal.fire("Deleted!", "success");
-    //       fetch(`https://quick-food-server.vercel.app/reviews/${id}`, {
-    //         method: "DELETE",
-    //       })
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //           console.log(data);
-    //           if (data.deletedCount > 0) {
-    //             const remaining = reviews.filter((rvw) => rvw._id !== id);
-    //             setReviews(remaining);
-    //           }
-    //         });
-    //     }
-    //   });
-    // };
+    const handleDelete = (id) => {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You Want to Delete?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire("Deleted!", "success");
+          fetch(`http://localhost:5000/users/${id}`, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              if (data.deletedCount > 0) {
+                refetch();
+              }
+            });
+        }
+      });
+    };
     return (
         <div>
       <div className="overflow-x-auto">
@@ -77,7 +77,7 @@ const Alluser = () => {
                 <td>
                     {user?.role !== 'admin' && <button onClick={() => handleMakeAdmin(user?._id)} className="btn btn-secondary btn-xs text-white">Make Admin</button>}
                 </td>
-                <td><button className="btn btn-error bg-rose-600 btn-xs text-white">Delete</button></td>
+                <td><button onClick={() => handleDelete(user._id)} className="btn btn-error bg-rose-600 btn-xs text-white">Delete</button></td>
               </tr>
             ))}
           </tbody>
