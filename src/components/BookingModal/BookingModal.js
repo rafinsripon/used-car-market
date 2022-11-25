@@ -4,7 +4,7 @@ import { AuthContext } from "../../contexts/AuthProvider";
 
 const BookingModal = ({ booked, setBooked }) => {
   const { user } = useContext(AuthContext);
-  const { name, resale_price, original_price, location } = booked;
+  const { name, resale_price, original_price, location, img } = booked;
   const handleBooking = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -22,6 +22,7 @@ const BookingModal = ({ booked, setBooked }) => {
       originalprice,
       resaleprice,
       phone,
+      img,
     };
     fetch("http://localhost:5000/bookings", {
       method: "POST",
@@ -42,7 +43,7 @@ const BookingModal = ({ booked, setBooked }) => {
   });
 
   };
-  
+
   return (
     <>
       <input type="checkbox" id="booking-modal" className="modal-toggle" />

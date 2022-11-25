@@ -24,6 +24,30 @@ const Header = () => {
     <div className="bg-[#22223b]">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
+        <div className="lg:hidden">
+          <label
+          htmlFor="dashboard-drawer"
+          aria-label="Open Menu"
+          title="Open Menu"
+          className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline"
+          
+          >
+            <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
+              />
+              <path
+                fill="currentColor"
+                d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
+              />
+              <path
+                fill="currentColor"
+                d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
+              />
+            </svg>
+          </label>
+          </div>
           <div className="flex items-center">
             <Link
               to="/"
@@ -69,9 +93,17 @@ const Header = () => {
             </ul>
           </div>
           <ul className="flex items-center hidden space-x-8 lg:flex">
-            <div className="flex">
+            <div className="flex gap-4">
               {
                 user?.uid ? <>
+                <Link
+                  to="/dashboard"
+                  aria-label="Dashboard"
+                  title="Dashboard"
+                  className="font-bold tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                >
+                  Dashboard
+                </Link>
                 <button onClick={handleSignOut} className='font-bold text-slate-100'>Log Out</button>
                 </> : <>
                 <Link

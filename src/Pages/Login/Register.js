@@ -30,7 +30,6 @@ const Register = () => {
       .then((result) => {
         console.log(result.user);
         saveduser(name, select, email)
-        navigate(from, {replace: true})
         toast.success("User Create Success");
       })
       .catch((error) => {
@@ -51,7 +50,20 @@ const Register = () => {
     })
     .then(res => res.json())
     .then(data => {
+        getUserToken(email);
         console.log(data)
+    })
+  }
+
+  //getsave user token
+  const getUserToken = (email) => {
+    fetch(`http://localhost:5000/jwt?email=${email}`)
+    .then(res => res.json())
+    .then(data => {
+      if(data.accessToken){
+        localStorage.setItem('accessToken', data.accessToken)
+        navigate(from, {replace: true})
+      }
     })
   }
   
@@ -99,8 +111,8 @@ const Register = () => {
             </div>
             <div>
               <select name="select" className="select select-bordered w-full">
+                <option>User</option>
                 <option>Buyer</option>
-                <option>Saller</option>
               </select>
             </div>
             <div>
