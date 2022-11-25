@@ -1,10 +1,13 @@
 import { async } from "@firebase/util";
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useContext } from "react";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import SmallSpinner from "../../../components/BigSpinner/SmallSpinner";
 
 const AddProduct = () => {
-  const { data: categories = [] } = useQuery({
+  const navigate = useNavigate()
+  const { data: categories = [], isLoading } = useQuery({
     queryKey: ["categories"],
     queryFn: async () => {
       const res = await fetch("http://localhost:5000/categories");
@@ -12,6 +15,7 @@ const AddProduct = () => {
       return data;
     },
   });
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -65,8 +69,9 @@ const AddProduct = () => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
-            toast.success(`${data.name} is added successfully`);
-            // navigate('/dashboard/manageDoctor');
+            toast.success(`Product Added is added successfully`);
+            form.reset();
+            // navigate('/categorys')
           });
       });
   };
@@ -222,7 +227,9 @@ const AddProduct = () => {
           ></textarea>
         </div>
         <div class="flex justify-end mt-6">
-          <button className="btn btn-secondary">Add A Product</button>
+          <button className="btn btn-secondary">
+          Add A Product
+            </button>
         </div>
       </form>
     </section>

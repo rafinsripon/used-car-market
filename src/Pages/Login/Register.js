@@ -28,10 +28,13 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        console.log(result.user.displayName);
         saveduser(name, role, email)
         toast.success("User Create Success");
-      })
+        updateUserProfile(name)
+            .then(() => {})
+            .catch((error) => console.log(error));
+        })
       .catch((error) => {
         setLoading(false);
         toast.error(error.message);

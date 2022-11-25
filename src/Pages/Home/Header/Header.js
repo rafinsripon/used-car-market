@@ -2,51 +2,53 @@ import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
+import avater from "../../../Assets/Image/avater.jpg";
+import icon from "../../../Assets/Image/icon1.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const {user, logout} = useContext(AuthContext)
-    const navigate = useNavigate();
+  const { user, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+  console.log(user)
 
-    //Logout from firebase
+  //Logout from firebase
   const handleSignOut = () => {
     logout()
       .then(() => {
-        navigate('/login');
-        toast.success('Success log out')
-        console.log('Success log out');
+        navigate("/login");
+        toast.success("Success log out");
+        console.log("Success log out");
       })
-      .catch(error => {
-          console.log(error);
-      }) 
-  }
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="bg-[#22223b]">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
-        <div className="lg:hidden">
-          <label
-          htmlFor="dashboard-drawer"
-          aria-label="Open Menu"
-          title="Open Menu"
-          className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline"
-          
-          >
-            <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
-              />
-              <path
-                fill="currentColor"
-                d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
-              />
-              <path
-                fill="currentColor"
-                d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
-              />
-            </svg>
-          </label>
+          <div className="lg:hidden">
+            <label
+              htmlFor="dashboard-drawer"
+              aria-label="Open Menu"
+              title="Open Menu"
+              className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline"
+            >
+              <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
+                <path
+                  fill="currentColor"
+                  d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
+                />
+                <path
+                  fill="currentColor"
+                  d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
+                />
+                <path
+                  fill="currentColor"
+                  d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
+                />
+              </svg>
+            </label>
           </div>
           <div className="flex items-center">
             <Link
@@ -55,7 +57,8 @@ const Header = () => {
               title="Company"
               className="inline-flex items-center mr-8"
             >
-              <p className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
+              <img className="h-12 w-12" src={icon} alt="" />
+              <p className=" text-xl font-bold tracking-wide text-gray-100 uppercase">
                 Used Merket
               </p>
             </Link>
@@ -93,29 +96,42 @@ const Header = () => {
             </ul>
           </div>
           <ul className="flex items-center hidden space-x-8 lg:flex">
-            <div className="flex gap-4">
-              {
-                user?.uid ? <>
-                <Link
-                  to="/dashboard"
-                  aria-label="Dashboard"
-                  title="Dashboard"
-                  className="font-bold tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                >
-                  Dashboard
-                </Link>
-                <button onClick={handleSignOut} className='font-bold text-slate-100'>Log Out</button>
-                </> : <>
-                <Link
-                to="/login"
-                aria-label="Sign in"
-                title="Sign in"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Sign in
-              </Link>
+            <div className="flex gap-4 items-center">
+              {user?.uid ? (
+                <>
+                  <Link
+                    to="/dashboard"
+                    aria-label="Dashboard"
+                    title="Dashboard"
+                    className="font-bold tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  >
+                    Dashboard
+                  </Link>
+                  <span className="text-xl font-bold text-white">{user?.displayName}</span>
+                  <img
+                    className="w-10 h-10 rounded-full border-2 border-pink-600 cursor-pointer"
+                    src={user?.photoURL ? user?.photoURL : `${avater}`}
+                    alt=""
+                  />
+                  <button
+                    onClick={handleSignOut}
+                    className="font-bold text-slate-100"
+                  >
+                    Log Out
+                  </button>
                 </>
-              }
+              ) : (
+                <>
+                  <Link
+                    to="/login"
+                    aria-label="Sign in"
+                    title="Sign in"
+                    className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                  >
+                    Sign in
+                  </Link>
+                </>
+              )}
             </div>
           </ul>
           <div className="lg:hidden">
@@ -151,8 +167,9 @@ const Header = () => {
                         title="Company"
                         className="inline-flex items-center"
                       >
-                        <p className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-                          Used <span className="text-primary">Car</span> Merket
+                        <img className="h-12 w-12" src={icon} alt="" />
+                        <p className="ml-2 text-xl font-bold tracking-wide text-gray-900 uppercase">
+                          Used Merket
                         </p>
                       </Link>
                     </div>
@@ -179,7 +196,7 @@ const Header = () => {
                           to="/categories"
                           aria-label="Our product"
                           title="Our product"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Categories
                         </Link>
@@ -189,7 +206,7 @@ const Header = () => {
                           to="/blog"
                           aria-label="Our product"
                           title="Our product"
-                          className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                          className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
                         >
                           Blog
                         </Link>
@@ -199,21 +216,52 @@ const Header = () => {
                           to="/advertice"
                           aria-label="Our product"
                           title="Our product"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                          className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Advertice
                         </Link>
                       </li>
-                      <li>
-                        <Link
-                          to="/login"
-                          aria-label="Sign in"
-                          title="Sign in"
-                          className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                        >
-                          Sign in
-                        </Link>
-                      </li>
+                      <div className="flex gap-4 items-center">
+                        {user?.uid ? (
+                          <>
+                            <Link
+                              to="/dashboard"
+                              aria-label="Dashboard"
+                              title="Dashboard"
+                              className="font-bold tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
+                            >
+                              Dashboard
+                            </Link>
+                            <span className="text-xl font-bold">
+                              {user?.displayName}
+                            </span>
+                            <img
+                              className="w-10 h-10 rounded-full border-2 border-pink-600 cursor-pointer"
+                              src={
+                                user?.photoURL ? user?.photoURL : `${avater}`
+                              }
+                              alt=""
+                            />
+                            <button
+                              onClick={handleSignOut}
+                              className="font-bold text-slate-900"
+                            >
+                              Log Out
+                            </button>
+                          </>
+                        ) : (
+                          <>
+                            <Link
+                              to="/login"
+                              aria-label="Sign in"
+                              title="Sign in"
+                              className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                            >
+                              Sign in
+                            </Link>
+                          </>
+                        )}
+                      </div>
                     </ul>
                   </nav>
                 </div>
