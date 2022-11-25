@@ -29,7 +29,7 @@ const Category = ({ct, setBooked}) => {
             <p className="text-2xl font-bold leading-5">{name}</p>
           </Link>
           <p className="mb-4 text-gray-700">
-            {discription.slice(0, 85)}
+            {discription?.slice(0, 80)}
           </p>
           <div className="flex space-x-4">
             <p className='font-bold text-secondary'>original price: ${original_price}</p>

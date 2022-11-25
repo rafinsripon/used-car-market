@@ -67,7 +67,7 @@ const BookingModal = ({ booked, setBooked }) => {
             <input
               name="name"
               type="text"
-              value={user?.displayName}
+              defaultValue={user?.displayName}
               disabled
               placeholder="Your Name"
               className="input w-full mt-6 border-2 border-gray-300"

@@ -56,7 +56,7 @@ const Header = () => {
               className="inline-flex items-center mr-8"
             >
               <p className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-                Used <span className="text-primary">Car</span> Merket
+                Used Merket
               </p>
             </Link>
             <ul className="flex items-center hidden space-x-8 lg:flex">

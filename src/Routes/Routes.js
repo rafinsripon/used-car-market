@@ -76,7 +76,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/addproduct',
-                element: <AddProduct />
+                element: <PrivateRoute>
+                    <AddProduct />
+                </PrivateRoute>
             },
             {
                 path: '/dashboard/payment/:id',

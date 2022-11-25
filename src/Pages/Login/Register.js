@@ -21,7 +21,7 @@ const Register = () => {
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
-    const select = form.select.value;
+    const role = form.role.value;
     const email = form.email.value;
     const password = form.password.value;
     // console.log(name,select, email, password);
@@ -29,7 +29,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
-        saveduser(name, select, email)
+        saveduser(name, role, email)
         toast.success("User Create Success");
       })
       .catch((error) => {
@@ -39,8 +39,8 @@ const Register = () => {
   };
 
   //saved User form database
-  const saveduser = (name, select, email) => {
-    const user = {name, select, email}
+  const saveduser = (name, role, email) => {
+    const user = {name, role, email}
     fetch('http://localhost:5000/users', {
         method: "POST",
         headers: {
@@ -110,9 +110,9 @@ const Register = () => {
               />
             </div>
             <div>
-              <select name="select" className="select select-bordered w-full">
-                <option>User</option>
-                <option>Buyer</option>
+              <select name="role" className="select select-bordered w-full">
+                <option value='user'>User</option>
+                <option value='seller'>Seller</option>
               </select>
             </div>
             <div>
