@@ -1,7 +1,10 @@
 import { async } from "@firebase/util";
 import { useQuery } from "@tanstack/react-query";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
+import SmallSpinner from "../../../components/BigSpinner/SmallSpinner";
+import Spinner from "../../../components/BigSpinner/Spinner";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const AddProduct = () => {
   const { data: categories = [], isLoading } = useQuery({
@@ -12,6 +15,8 @@ const AddProduct = () => {
       return data;
     },
   });
+  // const [loading, setLoading] = useState(false);
+  // const {loading} = useContext(AuthContext)
 
 
   const handleSubmit = (event) => {
@@ -70,7 +75,6 @@ const AddProduct = () => {
             console.log(data);
             toast.success(`Product Added is added successfully`);
             form.reset();
-            // navigate('/categorys')
           });
       });
   };
@@ -226,7 +230,7 @@ const AddProduct = () => {
         </div>
         <div class="flex justify-end mt-6">
           <button className="btn btn-secondary">
-          Add A Product
+            Add A product
             </button>
         </div>
       </form>
