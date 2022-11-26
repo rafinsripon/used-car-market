@@ -2,13 +2,14 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import SmallSpinner from "../../../components/BigSpinner/SmallSpinner";
 import Spinner from "../../../components/BigSpinner/Spinner";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const AddProduct = () => {
   // const [loading, setLoading] = useState(false);
-  // const {loading} = useContext(AuthContext)
+  const {user} = useContext(AuthContext)
   const navigate = useNavigate();
 
 
@@ -51,6 +52,7 @@ const AddProduct = () => {
           years_used: purchase,
           condition,
           category,
+          email: user.email,
           time: new Date().toLocaleDateString(),
           discription: message,
         };
@@ -71,6 +73,16 @@ const AddProduct = () => {
       });
   };
 
+  
+  // fetch('http://localhost:5000/addproduct', {
+  //   method: 'POST',
+  //   headers: {
+  //     'content-type': 'application/json'
+  //   },
+  //   body: JSON.stringify(addproduct)
+  // })
+  // .then(res => res.json())
+  // .then(data => console.log('myproductsData:', data))
   return (
     <section class="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-100 mt-12">
       <h2 class="text-lg font-semibold text-gray-900 capitalize">

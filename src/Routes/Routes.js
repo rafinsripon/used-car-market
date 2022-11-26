@@ -17,6 +17,8 @@ import AddminRoute from "./AdminRoute";
 import Payment from "../Pages/Dashbord/Payment/Payment";
 import SellerRoute from "./SellerRoute";
 import Error from "../Pages/Error/Error";
+import Myproduct from "../Pages/Dashbord/Myproduct/Myproduct";
+import Allseller from "../Pages/Dashbord/Allseller/Allseller";
 
 export const router = createBrowserRouter([
     {
@@ -79,9 +81,21 @@ export const router = createBrowserRouter([
                 </AddminRoute>
             },
             {
+                path: '/dashboard/allseller',
+                element: <AddminRoute>
+                    <Allseller/>
+                </AddminRoute>
+            },
+            {
                 path: '/dashboard/addproduct',
                 element: <SellerRoute>
                 <AddProduct />
+            </SellerRoute>
+            },
+            {
+                path: '/dashboard/myproduct',
+                element: <SellerRoute>
+                <Myproduct />
             </SellerRoute>
             },
             {
