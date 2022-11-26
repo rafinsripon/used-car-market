@@ -36,8 +36,7 @@ const AddProduct = () => {
     console.log(image);
     const formData = new FormData();
     formData.append("image", image);
-    const url =
-      "https://api.imgbb.com/1/upload?key=8f48b3fadb3c555b43a1283d391d1aa7";
+    const url ="https://api.imgbb.com/1/upload?key=8f48b3fadb3c555b43a1283d391d1aa7";
     console.log(url);
 
     fetch(url, {
