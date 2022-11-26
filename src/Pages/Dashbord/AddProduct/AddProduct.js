@@ -1,22 +1,15 @@
-import { async } from "@firebase/util";
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import SmallSpinner from "../../../components/BigSpinner/SmallSpinner";
 import Spinner from "../../../components/BigSpinner/Spinner";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const AddProduct = () => {
-  const { data: categories = [], isLoading } = useQuery({
-    queryKey: ["categories"],
-    queryFn: async () => {
-      const res = await fetch("http://localhost:5000/categories");
-      const data = await res.json();
-      return data;
-    },
-  });
   // const [loading, setLoading] = useState(false);
   // const {loading} = useContext(AuthContext)
+  const navigate = useNavigate();
 
 
   const handleSubmit = (event) => {
@@ -102,7 +95,7 @@ const AddProduct = () => {
           </div>
 
           <div>
-            <label class="text-gray-900 font-bold dark:text-gray-900" for="img">
+            <label class="text-gray-900 font-bold dark:text-gray-900" htmlFor="image">
               Product Image
             </label>
             <input
