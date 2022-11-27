@@ -54,6 +54,7 @@ const AddProduct = () => {
           category,
           email: user.email,
           time: new Date().toLocaleDateString(),
+          timess: new Date().toLocaleTimeString(),
           discription: message,
         };
         console.log(addproduct);

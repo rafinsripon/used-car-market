@@ -1,4 +1,5 @@
 import React from 'react';
+import Advertice from '../../Advertice/Advertice';
 import Categories from '../../Categories/Categories';
 import Explor from '../../Explor/Explor';
 import Feature from '../../Feature/Feature';
@@ -10,6 +11,7 @@ const Home = () => {
         <div>
             <Banner />
             <Categories />
+            {/* <Advertice /> */}
             <Feature />
             <Whatclient />
             <Explor />

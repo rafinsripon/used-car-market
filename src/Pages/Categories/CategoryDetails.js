@@ -7,7 +7,6 @@ import Category from './Category';
 const CategoryDetails = () => {
     const categorys = useLoaderData();
     const [booked, setBooked]  = useState(null)
-    console.log(categorys)
 
     return (
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
