@@ -1,29 +1,29 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import Spinner from '../../components/BigSpinner/Spinner';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 
 const Category = ({ct, setBooked}) => {
     const {_id, time, timess, name, location, resale_price, original_price, years_used, img, discription} = ct;
-    // const [desable, setDesable] = useState(false)
 
-    // const handleAdvertise = (ct) => {
-    //   console.log(ct)
-      
-    //   fetch(`http://localhost:5000/advertise`, {
-    //     method: 'POST',
-    //     headers: {
-    //       'content-type': 'application/json'
-    //     },
-    //     body: JSON.stringify(ct)
-    //   })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     console.log(data);
-    //   })
-
-    // }
+    const handleAdver = () => {
+      console.log(ct)
+      fetch('http://localhost:5000/advertise', {
+          method: "POST",
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify({ct})
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          toast.success('Advertise added Successfully')
+        })
+    }
     return (
         <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-lg border-2 border-gray-100">
         <Link href="/" aria-label="Article">
@@ -62,7 +62,7 @@ const Category = ({ct, setBooked}) => {
           <label 
           onClick={() => setBooked(ct)}
           htmlFor="booking-modal" className="btn rounded-none mt-3">Book Now</label>
-           <button  className='btn btn-primary rounded-none'>Advertise</button>
+           <button onClick={() => handleAdver(ct)}  className='btn btn-primary rounded-none'>Advertise</button>
           </div>
         </div>
       </div>

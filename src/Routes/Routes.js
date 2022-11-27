@@ -46,10 +46,6 @@ export const router = createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
             },
             {
-                path: '/advertice',
-                element: <Advertice />
-            },
-            {
                 path: '/login',
                 element: <Login />
             },
@@ -104,6 +100,6 @@ export const router = createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:5000/bookings/${params.id}`)
             },
         ]
-    },
+    }
 ])
 
