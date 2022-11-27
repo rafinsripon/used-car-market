@@ -1,0 +1,11 @@
+.dsply{
+    display: inherit;
+}
+
+@media screen and (max-width: 576px){
+    .dsply{
+        display: none;
+    }
+}
+
+

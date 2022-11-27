@@ -53,17 +53,13 @@ const Myproduct = () => {
 
   return (
     <section className="dark:bg-gray-50 dark:text-gray-100 py-6">
-	  <div className="grid lg:grid-cols-3 gap-4 lg:px-0 px-6">
-
-    {product &&
-    product.map((ctg) => (
-      <SignleProduct ctg={ctg} 
-      handleDelete={handleDelete} 
-      
-      />
-    ))}	
-	</div>
-</section>
+      <div className="grid lg:grid-cols-3 gap-4 lg:px-0 px-6">
+        {product &&
+          product.map((ctg) => (
+            <SignleProduct ctg={ctg} handleDelete={handleDelete} />
+          ))}
+      </div>
+    </section>
   );
 };
 
