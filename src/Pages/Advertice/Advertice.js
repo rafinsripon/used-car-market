@@ -15,7 +15,7 @@ const Advertice = () => {
     })
     return (
         <>
-        <div className='bg-gray-200'>
+        <div className='bg-[#dddddd63]'>
         {
             advertise.length > 0 && <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 ">
             {

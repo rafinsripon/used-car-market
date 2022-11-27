@@ -19,6 +19,8 @@ import SellerRoute from "./SellerRoute";
 import Error from "../Pages/Error/Error";
 import Myproduct from "../Pages/Dashbord/Myproduct/Myproduct";
 import Allseller from "../Pages/Dashbord/Allseller/Allseller";
+import UserRoute from "./UserRoute";
+import HomeDashboard from "../Pages/Dashbord/HomeDashboard/HomeDashboard";
 
 export const router = createBrowserRouter([
     {
@@ -68,7 +70,15 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/dashboard',
-                element: <MyOrders />
+                element: <PrivateRoute>
+                    <HomeDashboard />
+                </PrivateRoute>
+            },
+            {
+                path: '/dashboard/user',
+                element: <UserRoute>
+                    <MyOrders />
+                </UserRoute>
             },
             {
                 path: '/dashboard/alluser',

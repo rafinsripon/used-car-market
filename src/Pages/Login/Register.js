@@ -75,9 +75,21 @@ const Register = () => {
     signInWithGoogle()
     .then(result => {
       const user = result.user;
-      toast.success('User Signin Success Fully');
+      console.log('usersrrrr:', user);
+      fetch('http://localhost:5000/users', {
+        method: "POST",
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({name: user?.displayName,
+          email: user?.email,
+          role: "user"})
+      })
+    .then(res => res.json())
+    .then(data => {
+      toast.success('Gooole Sign In Successfull')
       navigate(from, {replace: true})
-      console.log(user);
+    })
     })
     .catch(error => {
       console.log(error)

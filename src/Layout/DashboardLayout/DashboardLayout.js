@@ -3,12 +3,14 @@ import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import useAdmin from '../../hooks/useAdmin';
 import useSeller from '../../hooks/useSeller';
+import useUser from '../../hooks/useUser';
 import Header from '../../Pages/Home/Header/Header';
 
 const DashboardLayout = () => {
     const {user} = useContext(AuthContext);
     const [isAdmin] = useAdmin(user?.email);
-    const [isSeller] = useSeller(user?.email)
+    const [isSeller] = useSeller(user?.email);
+    const [isUser] = useUser(user?.email);
     return (
         <div>
             <Header />
@@ -20,13 +22,14 @@ const DashboardLayout = () => {
         <div className="drawer-side bg-secondary">
           <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 text-base-content lg:bg-inherit bg-[#231f39]">
-          <li>
-              <Link to="/dashboard" className="text-xl font-bold text-white">My orders</Link>
-            </li>
+          <li><Link to="/dashboard" className="text-xl font-bold text-white">Home</Link></li>
+          {
+            isUser && <li><Link to="/dashboard/user" className="text-xl font-bold text-white">My orders</Link></li>
+          }
             {
               isSeller && <> 
               <li><Link to="/dashboard/addproduct" className="text-xl text-white font-bold">Add A Product</Link></li>
-              <Link to="/dashboard/myproduct" className="text-xl text-white font-bold">My product</Link>
+              <li><Link to="/dashboard/myproduct" className="text-xl text-white font-bold">My product</Link></li>
               </>
             }
             {

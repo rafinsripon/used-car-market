@@ -83,16 +83,6 @@ const Header = () => {
                   Blog
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/advertice"
-                  aria-label="Our product"
-                  title="Our product"
-                  className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                >
-                  Advertice
-                </Link>
-              </li>
             </ul>
           </div>
           <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -209,16 +199,6 @@ const Header = () => {
                           className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-teal-accent-400"
                         >
                           Blog
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/advertice"
-                          aria-label="Our product"
-                          title="Our product"
-                          className="font-medium tracking-wide text-gray-900 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Advertice
                         </Link>
                       </li>
                       <div className="flex gap-4 items-center">
