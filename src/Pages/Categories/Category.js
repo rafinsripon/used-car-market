@@ -9,21 +9,6 @@ import { AuthContext } from '../../contexts/AuthProvider';
 const Category = ({ct, setBooked}) => {
     const {_id, time, timess, name, location, resale_price, original_price, years_used, img, discription} = ct;
 
-    const handleAdver = () => {
-      console.log(ct)
-      fetch('http://localhost:5000/advertise', {
-          method: "POST",
-          headers: {
-            'content-type': 'application/json'
-          },
-          body: JSON.stringify({ct})
-        })
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
-          toast.success('Advertise added Successfully')
-        })
-    }
     return (
         <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-lg border-2 border-gray-100">
         <Link href="/" aria-label="Article">
@@ -58,12 +43,9 @@ const Category = ({ct, setBooked}) => {
           <p className='font-bold mt-2 text-rose-600'>{time}</p>
           <p className='font-bold mt-2 text-rose-600'>{timess}</p>
           </div>
-          <div className='flex items-center justify-between'>
           <label 
           onClick={() => setBooked(ct)}
-          htmlFor="booking-modal" className="btn rounded-none mt-3">Book Now</label>
-           <button onClick={() => handleAdver(ct)}  className='btn btn-primary rounded-none'>Advertise</button>
-          </div>
+          htmlFor="booking-modal" className="btn w-full rounded-none mt-3">Book Now</label>
         </div>
       </div>
     );
