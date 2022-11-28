@@ -1,4 +1,5 @@
 import React from 'react';
+import BannerSlider from '../../../components/Slider/BannerSlider';
 import Advertice from '../../Advertice/Advertice';
 import Categories from '../../Categories/Categories';
 import Explor from '../../Explor/Explor';
@@ -11,6 +12,7 @@ const Home = () => {
         <div>
             <Banner />
             <Categories />
+            <BannerSlider />
             <Advertice />
             <Feature />
             <Whatclient />
