@@ -58,7 +58,7 @@ const AddProduct = () => {
           discription: message,
         };
         console.log(addproduct);
-        fetch("http://localhost:5000/category", {
+        fetch("https://used-car-resale-market-server.vercel.app/category", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -75,7 +75,7 @@ const AddProduct = () => {
   };
 
   
-  // fetch('http://localhost:5000/addproduct', {
+  // fetch('https://used-car-resale-market-server.vercel.app/addproduct', {
   //   method: 'POST',
   //   headers: {
   //     'content-type': 'application/json'

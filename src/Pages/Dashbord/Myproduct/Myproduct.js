@@ -13,7 +13,7 @@ const Myproduct = () => {
   const { data = [], refetch } = useQuery({
     queryKey: ["category"],
     queryFn: () => {
-      fetch("http://localhost:5000/category")
+      fetch("https://used-car-resale-market-server.vercel.app/category")
         .then((res) => res.json())
         .then((data) => {
           const myproducts = data.filter((products) => {
@@ -37,7 +37,7 @@ const Myproduct = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire("Deleted!", "success");
-        fetch(`http://localhost:5000/category/${id}`, {
+        fetch(`https://used-car-resale-market-server.vercel.app/category/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

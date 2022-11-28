@@ -9,14 +9,14 @@ const Alluser = () => {
     const {data: users = [], refetch} = useQuery({
         queryKey : ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users')
+            const res = await fetch('https://used-car-resale-market-server.vercel.app/users')
             const data = await res.json();
             return data;
         }
     })
 
     const handleMakeAdmin = (id) => {
-      fetch(`http://localhost:5000/users/admin/${id}`, {
+      fetch(`https://used-car-resale-market-server.vercel.app/users/admin/${id}`, {
         method: 'PUT', 
       })
       .then(res => res.json())
@@ -32,7 +32,7 @@ const Alluser = () => {
 
     //make verify
     const handleVerify = (id) => {
-      fetch(`http://localhost:5000/users/verify/${id}`,{
+      fetch(`https://used-car-resale-market-server.vercel.app/users/verify/${id}`,{
         method: 'PATCH',
         headers: {
           'content-type': 'application/json'
@@ -60,7 +60,7 @@ const Alluser = () => {
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire("Deleted!", "success");
-          fetch(`http://localhost:5000/users/${id}`, {
+          fetch(`https://used-car-resale-market-server.vercel.app/users/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())

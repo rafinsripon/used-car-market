@@ -44,7 +44,7 @@ const Register = () => {
   //saved User form database
   const saveduser = (name, role, email) => {
     const user = {name, role, email}
-    fetch('http://localhost:5000/users', {
+    fetch('https://used-car-resale-market-server.vercel.app/users', {
         method: "POST",
         headers: {
             'content-type': 'application/json'
@@ -60,7 +60,7 @@ const Register = () => {
 
   //getsave user token
   const getUserToken = (email) => {
-    fetch(`http://localhost:5000/jwt?email=${email}`)
+    fetch(`https://used-car-resale-market-server.vercel.app/jwt?email=${email}`)
     .then(res => res.json())
     .then(data => {
       if(data.accessToken){
@@ -76,7 +76,7 @@ const Register = () => {
     .then(result => {
       const user = result.user;
       console.log('usersrrrr:', user);
-      fetch('http://localhost:5000/users', {
+      fetch('https://used-car-resale-market-server.vercel.app/users', {
         method: "POST",
         headers: {
             'content-type': 'application/json'

@@ -42,7 +42,7 @@ export const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <CategoryDetails />
                 </PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({params}) => fetch(`https://used-car-resale-market-server.vercel.app/category/${params.id}`)
             },
             {
                 path: '/login',

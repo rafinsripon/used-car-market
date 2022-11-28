@@ -8,7 +8,7 @@ const SignleProduct = ({ ctg, handleDelete }) => {
 
   const handleAdver = () => {
     console.log(ctg);
-    fetch("http://localhost:5000/advertise", {
+    fetch("https://used-car-resale-market-server.vercel.app/advertise", {
       method: "POST",
       headers: {
         "content-type": "application/json",
