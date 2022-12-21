@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Spinner from '../../components/BigSpinner/Spinner';
 
 const Advertice = () => {
+  //advertices
     const {data: advertise = []} = useQuery({
         queryKey: ['advertice'],
         queryFn: async() => {
